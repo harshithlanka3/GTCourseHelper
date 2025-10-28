@@ -6,6 +6,8 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 import dotenv
 import pickle
+from sentence_transformers import SentenceTransformer
+
 
 dotenv.load_dotenv()
 
@@ -91,7 +93,6 @@ def search_courses(user_query, df_path='data/202508_processed.pkl', top_k=50, us
         query_for_search = user_query
     
     # Generate embedding for the query
-    from sentence_transformers import SentenceTransformer
     model = SentenceTransformer('all-MiniLM-L6-v2')
     query_embedding = model.encode(query_for_search).reshape(1, -1)
     
