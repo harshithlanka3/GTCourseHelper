@@ -44,17 +44,25 @@ def generate_idealized_course_description(user_query):
     Returns:
         str: An idealized course description optimized for embedding search
     """
-    prompt = f"""Generate a course description that would be most applicable to their request. In the course description, provide a list of topics as well as a general description of the course. Limit the description to be less than 200 words.
+    prompt = f"""You will be given a request from a student at Georgia Institute of Technology to provide quality course recommendations. \
+Generate a concise, content-focused course description that best matches their academic interests. Provide a list of topics and a general description suitable for embedding search.
+
+CRITICAL:
+- Do NOT include any scheduling, days, times, availability, or section-related constraints even if mentioned by the student. Ignore all time/schedule preferences.
+- Do NOT include any prerequisite-related constraints or the student's background/eligibility (e.g., "I haven't taken X", "minimal prerequisites"). Ignore prerequisite preferences entirely.
+- Focus ONLY on subject matter, skills, and learning objectives.
+- Keep under 200 words.
 
 Student Request:
-{user_query}"""
+{user_query}
+"""
 
     try:
         response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "You are an expert at creating academic course descriptions for university catalogs."},
-                {"role": "user", "content": prompt}
+                {"role": "system", "content": prompt},
+                {"role": "user", "content": user_query}
             ],
             temperature=0
         )

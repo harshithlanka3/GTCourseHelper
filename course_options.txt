@@ -1,0 +1,246 @@
+Total courses: 49
+
+CS 3510: Dsgn&amp;Analysis-Algorithms
+Description: Basic techniques of design and analysis of efficient algorithms for standard computational problems. NP-Completeness.  Credit not allowed for both CS 3510 and CS 3511.
+Prerequisites: (((CS 2050 ≥ C OR CS 2051 ≥ C OR MATH 2106 ≥ C) AND (CS 1332 ≥ C OR MATH 3012 ≥ D OR MATH 3022 ≥ D)))
+Sections: Section A: TR 1230 - 1345; Section B: TR 1400 - 1515; Section C: TR 1700 - 1815
+
+CSE 6140: Comp Sci&amp;Engr Algorithms
+Description: This course will introduce students to designing high-performance and scalable algorithms for computational science and engineering applications. The course focuses on algorithms design, complexity analysis, experimentation, and optimization, for important science and engineering applications.
+Prerequisites: ((CS 2110 ≥ D AND (CS 1332 ≥ D OR CS 1372 ≥ D)))
+Sections: Section A: MW 1100 - 1215
+
+CS 6515: Intro to Grad Algorithms
+Description: Design and analysis of algorithms on a graduate level, including dynamic programming, divide and conquer, FFT, graph and flow algorithms, RSA, linear programming, and NP-completedness.
+Prerequisites: 
+Sections: Section A: TR 1530 - 1645; Section O01: TBA TBA; Section O3: TBA TBA; Section ODC: TBA TBA; Section OSZ: TBA TBA; Section X: TBA TBA
+
+CS 3511: Algorithms Honors
+Description: Techniques of design and analysis of efficient algorithms for standard computational problems.  NP-Completeness Project.  Credit not allowed for both CS 3511 and CS 3510.
+Prerequisites: (((CS 2050 ≥ C OR CS 2051 ≥ C OR MATH 2106 ≥ C) AND (CS 1332 ≥ C OR MATH 3012 ≥ D OR MATH 3022 ≥ D)))
+Sections: Section A: MW 1530 - 1645
+
+CSE 6001: Intro-Comp Sci &amp; Engr
+Description: This course will introduce students to major research areas in computational science and engineering.
+Prerequisites: 
+Sections: Section A: F 1230 - 1320
+
+CSE 6010: Computational Prob Solv
+Description: Computing principles, computer architecture, algorithms and data structure; software development, parallelism. No credit for graduate students or undergraduates in Computer Science or Computational Media.
+Prerequisites: (CS 1371 ≥ D)
+Sections: Section A: F 1400 - 1645
+
+CSE 6220: High Perform Computing
+Description: This course will introduce students to the design, analysis, and implementation of high performance computational science and engineering applications.
+Prerequisites: ((CS 2110 ≥ D AND (CS 1332 ≥ D OR CS 1372 ≥ D)))
+Sections: Section O01: TBA TBA
+
+ECE 4122: Adv Prog Techniques
+Description: Course covers a number of programming techniques for distributed and parallel computing and other advanced methods, such as multiprecision arithmetic and nonblocking I/O. Credit not awarded for ECE 4122 and ECE 6122.
+Prerequisites: (ECE 2035 ≥ C OR ECE 2036 ≥ C)
+Sections: Section A: TR 0825 - 0915; Section AL: TBA TBA
+
+MATH 2603: Intro Discrete Math
+Description: Mathematical logic and proof, mathematical induction, counting methods, recurrence relations, algorithms and complexity, graph theory and graph algorithms. Credit not awarded for both MATH 2603 and MATH 2602.
+Prerequisites: (MATH 1502 ≥ D OR MATH 1512 ≥ D OR MATH 1504 ≥ D OR MATH 1555 ≥ D OR MATH 1552 ≥ D OR MATH 15X2 ≥ T OR MATH 1X52 ≥ T)
+Sections: Section D: TR 0930 - 1045; Section D01: MW 0930 - 1020; Section D02: MW 1230 - 1320; Section D03: MW 0930 - 1020; Section L: TR 1530 - 1645; Section L01: MW 0930 - 1020; Section L02: MW 0930 - 1020; Section L03: MW 1230 - 1320
+
+CS 6220: Big Data Sys &amp; Analytics
+Description: This course will cover the concepts, techniques, algorithms, and systems of big data systems and data analytics, with strong emphasis on big data processing systems, fundamental models and optimizations for data analytics and machine learning, which are widely deployed in real world big data analytics and applications.
+Prerequisites: (CS 4400 ≥ D)
+Sections: Section A: TR 1100 - 1215
+
+CS 1315: Intro Media Computation
+Description: Introduction to computation (algorithmic thinking, data structures, data transformation and processing, and programming) in a media and communication context. Credit not awarded for both CS 4452 and CS 1315.
+Prerequisites: 
+Sections: Section A: MWF 0825 - 0915; Section GR: MWF 0825 - 0915
+
+ISYE 6134: Constraint Programming
+Description: This course is an introduction to constraint programming, from its modeling language to its computational methodology and its applications to scheduling, routing, and resource allocation.
+Prerequisites: 
+Sections: Section AQ: MW 1700 - 1815
+
+CS 4540: Advanced Algs
+Description: Advanced techniques for designing and analyzing efficient algorithms for combinatorial, algebraic, and number theoretic problems.  Credit not allowed for both CS 4540 and CS 6505 or CS 4540 and CS 6515.
+Prerequisites: (((CS 3510 ≥ C OR CS 3511 ≥ C) AND (MATH 3012 ≥ D OR MATH 3022 ≥ D) AND (MATH 3215 ≥ D OR MATH 3235 ≥ D OR MATH 3225 ≥ D OR MATH 3770 ≥ D OR MATH 3670 ≥ D OR CEE 3770 ≥ D OR ISYE 3770 ≥ D OR (ISYE 2027 ≥ D AND (ISYE 2028 ≥ D OR ISYE 3030 ≥ D)))))
+Sections: Section A: TR 1530 - 1645
+
+CS 1371: Computing for Engineers
+Description: Foundations of computing with an introduction to design and analysis of algorithms and an introduction to design and construction of programs for engineering problem-solving.
+Prerequisites: 
+Sections: Section A: TR 1100 - 1215; Section B: TR 1230 - 1345; Section C: TR 1530 - 1645; Section GR: TR 1100 - 1215; Section O1: W 1700 - 1815; Section R: TBA TBA; Section ROX: TBA TBA
+
+CSE 8803: Data Science for Epidemiology
+Description: Topics of current interest in Computational Science and Engineering.
+Prerequisites: 
+Sections: Section EPI: TR 1700 - 1815; Section KAL: TR 1700 - 1815; Section MLG: TR 0930 - 1045; Section NBD: MW 1530 - 1645; Section OAN: TBA TBA; Section SML: TR 0800 - 0915
+
+CSE 8801: Linearalgebra,probability,sta
+Description: Topics of current interest in Computational Science and Engineering.
+Prerequisites: 
+Sections: Section LAS: TR 1400 - 1515
+
+ISYE 3133: Engineering Optimization
+Description: Topics include modeling with networks and graphs; linear, nonlinear, and integer programming, construction of models employing modern modeling languages; and general solution strategies.
+Prerequisites: ((ISYE 2027 ≥ D AND (MATH 2602 ≥ C OR MATH 2603 ≥ C) AND CS 2316 ≥ D) OR (MATH 3215 ≥ C OR MATH 3225 ≥ C OR MATH 3235 ≥ C OR MATH 3236 ≥ C))
+Sections: Section LEC: TR 1530 - 1620; Section MW1: MW 0930 - 1020; Section MW2: MW 1100 - 1150; Section MW3: MW 1230 - 1320; Section MW4: MW 1400 - 1450; Section MW5: MW 1700 - 1750; Section TR1: TR 0825 - 0915; Section TR2: TR 1230 - 1320
+
+CS 4290: Advanced Computer Org
+Description: Topics concerning the hardware design of computer systems. Advanced techniques in high-performance pipelined central processing units. Memory and I/O systems. Parallel processors including shared-memory multiprocessors and cluster computers.  Credit is not allowed for both CS 4290 and any of the following courses:  CS 6290, ECE 4100, ECE 6100.
+Prerequisites: (CS 2200 ≥ C OR ECE 3057 ≥ C OR ECE 3058 ≥ C)
+Sections: Section A: MW 1530 - 1645; Section B: TR 1530 - 1645
+
+ECE 6122: Adv Prog Techniques
+Description: Covers a number of advanced topics in programming methods, data management, distributed computing, and advanced algorithms used in typical engineering applications. Credit will not be awarded for ECE 6122 and ECE 4122.
+Prerequisites: 
+Sections: Section A: TR 0825 - 0915; Section LA: TBA TBA; Section Q: TBA TBA; Section Q01: TBA TBA; Section Q3: TBA TBA; Section Q3L: TBA TBA; Section QSL: TBA TBA; Section QSZ: TBA TBA
+
+CS 2050: Intro Discrete Math CS
+Description: Proof methods, strategy, correctness of algorithms over discrete structures.  Induction and recursion.  Complexity and order of growth.  Number theoretic principles and algorithms.  Counting and computability.  Credit not allowed for both CS 2050 and CS 2051.
+Prerequisites: 
+Sections: Section A: MWF 0825 - 0915; Section B: MWF 0930 - 1020; Section C: MW 0800 - 0915; Section D: MW 1400 - 1515; Section FAA: MWF 0825 - 0915; Section FAB: MWF 0930 - 1020; Section FAC: MW 0800 - 0915; Section FAD: MW 1400 - 1515
+
+MATH 6014: Graph Theory
+Description: Fundamentals, connectivity, matchings, colorings, extremal problems, Ramsey theory, planar graphs, perfect graphs. Applications to operations research and the design of efficient algorithms.
+Prerequisites: (MATH 4022 ≥ D)
+Sections: Section B: MW 1100 - 1215
+
+CS 6290: High Perform Comput Arch
+Description: Topics concerning very high-performance computers including techniques exploiting parallelism in single and multiple processor systems.  Credit not allowed for both CS 6290 and any of the following courses: CS 4290, ECE 4100, ECE 6100.
+Prerequisites: (CS 2200 ≥ D)
+Sections: Section A: MW 1530 - 1645; Section B: TR 1530 - 1645; Section O01: TBA TBA; Section PHD: MW 1530 - 1645; Section QSZ: TBA TBA
+
+ISYE 4111: Adv Supply Chain Logists
+Description: This course is a follow-up to ISyE 3103 that covers optimization models and case studies for logistics network design and logistics operations.
+Prerequisites: ((ISYE 3103 ≥ D AND ISYE 3133 ≥ D AND ISYE 3232 ≥ D))
+Sections: Section A: MW 1700 - 1815
+
+CS 7545: Machine Learning Theory
+Description: This course provides a basic arsenal of powerful mathematical tools for the analysis of learning algorithms, focusing on both statistical and computational aspects.
+Prerequisites: 
+Sections: Section A: MW 1530 - 1645
+
+CS 6999: Master&#39;s Project
+Description: Final project for students completing a master&#39;s degree in the College of Computing.  Repeatable for multi-semester projects.
+Prerequisites: 
+Sections: Section A01: TBA TBA; Section A02: TBA TBA; Section A04: TBA TBA; Section A06: TBA TBA; Section A10: TBA TBA; Section A12: TBA TBA; Section A13: TBA TBA; Section A14: TBA TBA; Section A15: TBA TBA; Section A17: TBA TBA; Section AD1: TBA TBA; Section B02: TBA TBA; Section B05: TBA TBA; Section B06: TBA TBA; Section B09: TBA TBA; Section B11: TBA TBA; Section B13: TBA TBA; Section B15: TBA TBA; Section B20: TBA TBA; Section B28: TBA TBA; Section C04: TBA TBA; Section C07: TBA TBA; Section C09: TBA TBA; Section C11: TBA TBA; Section C12: TBA TBA; Section C14: TBA TBA; Section C20: TBA TBA; Section C25: TBA TBA; Section D04: TBA TBA; Section D07: TBA TBA; Section D12: TBA TBA; Section D18: TBA TBA; Section D19: TBA TBA; Section D20: TBA TBA; Section D21: TBA TBA; Section D22: TBA TBA; Section E03: TBA TBA; Section E07: TBA TBA; Section E10: TBA TBA; Section E13: TBA TBA; Section F02: TBA TBA; Section F04: TBA TBA; Section F12: TBA TBA; Section F13: TBA TBA; Section F14: TBA TBA; Section F15: TBA TBA; Section G02: TBA TBA; Section G06: TBA TBA; Section G08: TBA TBA; Section G13: TBA TBA; Section G18: TBA TBA; Section G20: TBA TBA; Section H08: TBA TBA; Section H11: TBA TBA; Section H13: TBA TBA; Section H14: TBA TBA; Section H16: TBA TBA; Section H17: TBA TBA; Section H18: TBA TBA; Section I04: TBA TBA; Section K06: TBA TBA; Section K12: TBA TBA; Section K13: TBA TBA; Section K14: TBA TBA; Section K15: TBA TBA; Section K16: TBA TBA; Section K17: TBA TBA; Section K18: TBA TBA; Section K19: TBA TBA; Section L03: TBA TBA; Section L05: TBA TBA; Section L10: TBA TBA; Section L11: TBA TBA; Section L12: TBA TBA; Section L23: TBA TBA; Section L25: TBA TBA; Section L27: TBA TBA; Section M05: TBA TBA; Section M08: TBA TBA; Section M16: TBA TBA; Section M24: TBA TBA; Section M27: TBA TBA; Section M28: TBA TBA; Section M31: TBA TBA; Section M32: TBA TBA; Section M35: TBA TBA; Section N01: TBA TBA; Section N05: TBA TBA; Section O01: TBA TBA; Section O02: TBA TBA; Section O04: TBA TBA; Section P01: TBA TBA; Section P02: TBA TBA; Section P05: TBA TBA; Section P07: TBA TBA; Section P09: TBA TBA; Section P14: TBA TBA; Section P16: TBA TBA; Section P17: TBA TBA; Section P21: TBA TBA; Section P22: TBA TBA; Section Q01: TBA TBA; Section R: TBA TBA; Section R01: TBA TBA; Section R02: TBA TBA; Section R08: TBA TBA; Section R12: TBA TBA; Section R13: TBA TBA; Section R19: TBA TBA; Section R20: TBA TBA; Section R21: TBA TBA; Section R22: TBA TBA; Section R23: TBA TBA; Section R25: TBA TBA; Section S06: TBA TBA; Section S15: TBA TBA; Section S20: TBA TBA; Section S21: TBA TBA; Section S26: TBA TBA; Section S28: TBA TBA; Section S36: TBA TBA; Section S40: TBA TBA; Section S41: TBA TBA; Section S45: TBA TBA; Section T02: TBA TBA; Section T10: TBA TBA; Section T11: TBA TBA; Section T12: TBA TBA; Section V01: TBA TBA; Section V05: TBA TBA; Section V06: TBA TBA; Section V07: TBA TBA; Section W01: TBA TBA; Section W05: TBA TBA; Section W06: TBA TBA; Section W11: TBA TBA; Section W12: TBA TBA; Section W13: TBA TBA; Section W14: TBA TBA; Section W15: TBA TBA; Section X01: TBA TBA; Section X03: TBA TBA; Section X04: TBA TBA; Section X05: TBA TBA; Section Y02: TBA TBA; Section Y04: TBA TBA; Section Y05: TBA TBA; Section Z01: TBA TBA; Section Z08: TBA TBA; Section Z10: TBA TBA; Section Z13: TBA TBA
+
+MATH 3012: Applied Combinatorics
+Description: Elementary combinatorial techniques used in discrete problem solving: counting methods, solving linear recurrences, graph and network models, related algorithms, and combinatorial designs.
+Prerequisites: (MATH 1502 ≥ D OR MATH 1512 ≥ D OR MATH 1504 ≥ D OR MATH 1555 ≥ D OR ((MATH 1552 ≥ D OR MATH 15X2 ≥ T OR MATH 1X52 ≥ T) AND (MATH 1553 ≥ D OR MATH 1554 ≥ D OR MATH 1X54 ≥ T OR MATH 1564 ≥ D OR MATH 1522 ≥ D OR MATH 1X53 ≥ T)))
+Sections: Section B: TR 0930 - 1045; Section D: TR 1100 - 1215; Section E: MW 1100 - 1215; Section F: TR 1230 - 1345; Section J: MW 1400 - 1515; Section L: MW 1530 - 1645; Section M: TR 1530 - 1645; Section QHS: TBA TBA
+
+ECON 7004: Math for Economists
+Description: Topics include matrix algebra, limits and open sets, implicit functions and their derivatives, quadratic forms and definite matrices, unconstrained and constrained static optimization, dynamic optimization and economic applications.
+Prerequisites: ((MATH 2401 ≥ D AND MATH 1522 ≥ D) OR (MATH 1551 ≥ D AND MATH 1553 ≥ D AND MATH 2551 ≥ D))
+Sections: Section SL: TR 0930 - 1045
+
+CS 3251: Computer Networking I
+Description: Introduction to problems in computer networking, including error recovery, medium access, routing, flow control, and transport. Emphasis on current best practice.  Includes programming of networked applications.
+Prerequisites: (CS 2200 ≥ C OR ECE 3057 ≥ C OR ECE 3058 ≥ C)
+Sections: Section A: MW 1400 - 1515; Section B: MW 0800 - 0915
+
+CS 7001: Grad Studies-Computing
+Description: Research tools including computer systems, as well as fundamental problem-solving skills, are introduced. Lectures on current computing research are presented and projects are required. Credit not allowed in a program of study for a graduate degree.
+Prerequisites: 
+Sections: Section LAB: TBA TBA; Section SIC: MW 1700 - 1815
+
+MATH 6767: Sys-Computation Finance
+Description: Computational Finance Introduction to large scale system design to support computational finance for options, stocks, or other financial instruments. Some programming experience, and previous exposure to stocks, bonds, and options required. Crosslisted with ISYE 6767
+Prerequisites: 
+Sections: Section A: MW 1100 - 1215
+
+CS 4510: Automata and Complexity
+Description: Computational machine models and their language classes. Undecidability. Resource-bounded computations. Central complexity-theoretic concepts such as complexity classes, reducibility and completeness.
+Prerequisites: (((CS 3510 ≥ C OR CS 3511 ≥ C) AND (MATH 3012 ≥ D OR MATH 3022 ≥ D) AND (MATH 3215 ≥ D OR MATH 3235 ≥ D OR MATH 3225 ≥ D OR MATH 3770 ≥ D OR MATH 3670 ≥ D OR CEE 3770 ≥ D OR ISYE 3770 ≥ D OR (ISYE 2027 ≥ D AND (ISYE 2028 ≥ D OR ISYE 3030 ≥ D)))))
+Sections: Section A: TR 1230 - 1345; Section B: TR 1530 - 1645
+
+ISYE 7800: Math of OR
+Description: Topics include Real Analysis (countable sets, basic topological notions, sequence, series, continuity), Basic Linear Algebra (linear transformations, vector spaces, singular value decomposition), and writing mathematical proofs.
+Prerequisites: 
+Sections: Section A: MW 1400 - 1515
+
+MGT 6753: Principles of Management
+Description: The course will provide an introduction to selected topics needed to be successful in the technology industries. Crosslisted with ME 6753.
+Prerequisites: 
+Sections: Section A: TBA TBA
+
+CX 4640: Numerical Analysis I
+Description: Introduction to numerical algorithms for some basic problems in computational mathematics. Discussion of both implementation issues and error analysis.
+Prerequisites: (MATH 2403 ≥ C OR MATH 2413 ≥ C OR MATH 24X3 ≥ T OR MATH 2602 ≥ C OR MATH 2603 ≥ C OR MATH 2552 ≥ C OR MATH 2562 ≥ C OR MATH 2X52 ≥ T)
+Sections: Section A: MW 1400 - 1515
+
+MATH 4640: Numerical Analysis I
+Description: Introduction to numerical algorithms for some basic problems in computational mathematics.  Discussion of both implementation issues and error analysis.
+Prerequisites: (MATH 2403 ≥ D OR MATH 2413 ≥ D OR MATH 24X3 ≥ T OR MATH 2602 ≥ D OR MATH 2605 ≥ D OR MATH 2552 ≥ D OR MATH 2562 ≥ D OR MATH 2X52 ≥ T OR MATH 2603 ≥ D)
+Sections: Section AG: MW 1400 - 1515; Section AU: MW 1400 - 1515
+
+CS 7643: Deep Learning
+Description: This course will cover theory and practice of deep learning, including neural network and structured models, optimization algorithms, and applications to perception and Artificial Intelligence.
+Prerequisites: (CSE 6740 ≥ D OR ISYE 6740 ≥ D OR CS 7641 ≥ D)
+Sections: Section A: MW 1530 - 1645; Section O01: TBA TBA; Section OAN: TBA TBA; Section OSZ: TBA TBA; Section R: TR 1400 - 1515
+
+ISYE 4600: Mthds &amp; Apps Machine Learning
+Description: This course introduces the available methods in machine learning, which methods are better in what situations, objective functions and errors, and how to tune parameters.
+Prerequisites: ((ISYE 3030 ≥ D AND ISYE 3133 ≥ D))
+Sections: Section A: TR 1100 - 1215
+
+MATH 1564: LinAlg w Abstract Vec Sp
+Description: This is an intensive first course in linear algebra including the theories of linear transformations and abstract vector spaces. Credit not awarded for both MATH 1564 and MATH 1553, MATH 1554, MATH 1522, MATH 1502, MATH 1504 or MATH 1512.
+Prerequisites: (MATH 1552 ≥ A)
+Sections: Section K: TR 1400 - 1515; Section K01: MW 1100 - 1150; Section K02: MW 1230 - 1320
+
+MGT 6452: Machine Learning for Bus
+Description: This course introduces machine learning techniques and their applications in solving business problems. It covers core concepts, algorithm designs, and programming implementation with business
+Prerequisites: 
+Sections: Section GBA: TBA TBA; Section MMO: TBA TBA
+
+MATH 2551: Multivariable Calculus
+Description: Multivariable calculus: Linear approximation and Taylor&#39;s theorems, Lagrange multiples and constrained optimization, multiple integration and vector analysis including the theorems of Green, Gauss, and Stokes. Credit will not be awarded for both MATH 2551 and MATH 2401 or MATH 2411 or MATH 2561.
+Prerequisites: (MATH 1502 ≥ D OR MATH 1512 ≥ D OR MATH 1504 ≥ D OR MATH 1555 ≥ D OR ((MATH 1552 ≥ D OR MATH 15X2 ≥ T OR MATH 1X52 ≥ T) AND (MATH 1553 ≥ D OR MATH 1X54 ≥ T OR MATH 1554 ≥ D OR MATH 1564 ≥ D OR MATH 1522 ≥ D OR MATH 1X53 ≥ T)))
+Sections: Section B: TR 0800 - 0915; Section B01: MW 0930 - 1020; Section B02: MW 0930 - 1020; Section B03: MW 0825 - 0915; Section B04: MW 0825 - 0915; Section D: TR 0930 - 1045; Section D01: MW 0930 - 1020; Section D02: MW 1100 - 1150; Section D03: MW 1100 - 1150; Section D04: MW 1100 - 1150; Section E: TR 1100 - 1215; Section E01: MW 1700 - 1750; Section E02: MW 1830 - 1920; Section E03: MW 1700 - 1750; Section G: TR 1230 - 1345; Section G01: MW 1400 - 1450; Section G02: MW 1230 - 1320; Section G03: MW 1230 - 1320; Section G04: MW 1400 - 1450; Section G05: MW 1400 - 1450; Section G06: MW 1230 - 1320; Section K: TR 1400 - 1515; Section K01: MW 1830 - 1920; Section K02: MW 1700 - 1750; Section K03: MW 1700 - 1750; Section L: TR 1530 - 1645; Section L01: MW 1830 - 1920; Section L02: MW 1830 - 1920; Section L03: MW 1700 - 1750; Section PBP: TR 0800 - 0915; Section PBS: MW 0930 - 1020; Section R: MW 1400 - 1515; Section R01: TR 1400 - 1450; Section RBS: TBA TBA; Section RS1: TBA TBA
+
+MATH 6514: Industrial Math I
+Description: Applied mathematics techniques to solve real-world problems. Topics include mathematical modeling, asymptotic analysis, differential equations and scientific computation.  Prepares the student for MATH 6515.
+Prerequisites: (((MATH 2403 ≥ D OR MATH 2602 ≥ D) AND MATH 4640 ≥ D))
+Sections: Section A: MW 1700 - 1815
+
+CS 6675: Advance Internet Comput
+Description: Survey of basic Internet computing concepts and techniques used in Internet systems and applications, combined with in-depth study of fundamental principles underlying Internet computing.  Credit not allowed for both CS 6675 and CS 4675.
+Prerequisites: (CS 3210 ≥ D OR CS 4499 ≥ D)
+Sections: Section O01: TBA TBA; Section OSZ: TBA TBA
+
+PHYS 2211: Principles of Physics I
+Description: An introductory course which will include mechanics (kinematics, dynamics, work and energy, momentum and collisions, and rotational motion and statics), and may also include oscillations and computational methods. This is a calculus-based course.
+Prerequisites: (MATH 1552 ≥ D OR MATH 1555 ≥ D OR MATH 1X52 ≥ D OR MATH 15X2 ≥ D)
+Sections: Section A: MW 0930 - 1045, M 1830 - 1945, M 1830 - 1945, M 1830 - 1945, M 1830 - 1945, M 1830 - 1945; Section B: MW 1100 - 1215, M 1830 - 1945; Section C: MW 1230 - 1345, M 1830 - 1945; Section D: TR 0930 - 1045, M 1830 - 1945; Section E: TR 1100 - 1215, M 1830 - 1945; Section HP: MW 0930 - 1045, M 1830 - 1945; Section HPL: M 1530 - 1815; Section L01: T 1530 - 1815; Section L02: W 1230 - 1515; Section L03: W 1530 - 1815; Section L04: M 1230 - 1515; Section L05: M 1530 - 1815; Section LS: TR 1230 - 1345, M 1830 - 1945; Section R: MW 1830 - 2030; Section RBL: TBA TBA; Section RBS: MW 1830 - 2030; Section RL: TBA TBA; Section W01: M 1230 - 1515; Section W02: M 1230 - 1515; Section W03: M 1230 - 1515; Section W04: M 1230 - 1515; Section W05: M 1530 - 1815; Section W06: M 1530 - 1815; Section W07: M 1530 - 1815; Section W08: T 1230 - 1515; Section W09: T 1230 - 1515; Section W10: T 1230 - 1515; Section W11: T 1230 - 1515; Section W12: T 1530 - 1815; Section W13: T 1530 - 1815; Section W14: T 1530 - 1815; Section W15: T 1530 - 1815; Section W16: T 1830 - 2115; Section W17: T 1830 - 2115; Section W18: T 1830 - 2115; Section W19: T 1830 - 2115; Section W20: W 1230 - 1515; Section W21: W 1230 - 1515; Section W22: W 1230 - 1515; Section W23: W 1230 - 1515; Section W24: W 1530 - 1815; Section W25: W 1530 - 1815; Section W26: W 1530 - 1815; Section W27: W 1530 - 1815; Section W28: W 1830 - 2115; Section W29: W 1830 - 2115; Section W30: W 1830 - 2115; Section W31: W 1830 - 2115; Section W32: R 1230 - 1515; Section W33: R 1230 - 1515; Section W34: R 1230 - 1515; Section W35: R 1230 - 1515; Section W36: R 1530 - 1815; Section W37: R 1530 - 1815; Section W38: R 1530 - 1815; Section W39: R 1530 - 1815; Section W40: R 1830 - 2115; Section W41: R 1830 - 2115; Section W42: R 1830 - 2115; Section W43: R 1830 - 2115; Section W44: F 0800 - 1045; Section W45: F 0800 - 1045; Section W46: F 0800 - 1045; Section W47: F 0800 - 1045
+
+LMC 6399: Discovery &amp; Invention
+Description: Required course for all DM majors. The purpose of this course is to give students a suite of methods they can use in professional settings to discover opportunities for inventive new computational products and services. It complements the design and production skills developed in 6310 and 6313 with applied research skills. For students in the MS DM and MS HCI programs it will also help them in the development of their MS proposals. Students cannot receive credit for LMC 6399 and LCC 6399.
+Prerequisites: 
+Sections: Section YL: MW 1530 - 1645
+
+CSE 6040: Computing for Data Analy
+Description: Computational techniques needed for data analysis; programming, accessing databases, multidimensional arrays, basic numerical computing, and visualization; hands-on applications and case studies. Credit is will not be awarded for both CSE 6040 and CX 4240.
+Prerequisites: (CS 1371 ≥ D)
+Sections: Section A: TR 1400 - 1515; Section MSA: TBA TBA; Section OAN: TBA TBA; Section QCH: TBA TBA
+
+CS 6250: Computer Networks
+Description: Principles and practice of computer networks, including signaling and framing, error control, medium access, routing, congestion control, end-to-end transport, and network APIs.
+Prerequisites: 
+Sections: Section A: TR 0930 - 1045; Section O01: TBA TBA; Section OCY: TBA TBA; Section OSZ: TBA TBA; Section R: MW 1400 - 1515
+
+MSE 6140: Computational Mat Sci
+Description: This course aims to provide a broad understanding of a spectrum of modern state-of-the-art computational methods used in materials science and engineering.
+Prerequisites: 
+Sections: Section B: MW 1400 - 1515
+
+CS 8001: Computer Architecture Seminar
+Description: Group discussion of advanced topics in information and computer science. May not be used by computer science majors for degree credit.
+Prerequisites: 
+Sections: Section CAS: F 1230 - 1330; Section CAT: W 1400 - 1450; Section DL: F 1100 - 1150; Section GVU: R 1230 - 1320; Section HC1: W 1230 - 1320; Section LST: TBA TBA; Section PLS: W 1230 - 1320; Section R: F 0900 - 1200
+
+ISYE 4034: Decision and Data Analytics
+Description: This course integrates decision and data analytics to solve real-world business problems.  It includes hands-on system modeling, data collection and analysis, and reporting writing projects.
+Prerequisites: ((ISYE 3133 ≥ D AND CS 4400 ≥ D AND ISYE 4031 ≥ D))
+Sections: Section A: TR 0930 - 1045; Section B: TR 1530 - 1645

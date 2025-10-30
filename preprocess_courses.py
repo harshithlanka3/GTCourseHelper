@@ -73,6 +73,8 @@ for course_id, (title, sections, prereqs, description) in courses.items():
         sid: [meeting_tuple_to_text(m) for m in sec_data[1]]
         for sid, sec_data in sections.items()
     }
+    if course_id == "MATH 2106":
+        print("hit")
 
     rows.append(
         {
