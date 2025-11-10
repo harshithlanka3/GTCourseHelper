@@ -1,0 +1,48 @@
+.MessageInput {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e0e0e0;
+  background: white;
+}
+
+.MessageInput-field {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 24px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.MessageInput-field:focus {
+  border-color: #B3A369;
+}
+
+.MessageInput-field:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.MessageInput-button {
+  padding: 0.75rem 1.5rem;
+  background: #B3A369;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.MessageInput-button:hover:not(:disabled) {
+  background: #9a8a57;
+}
+
+.MessageInput-button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+

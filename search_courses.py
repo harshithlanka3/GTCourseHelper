@@ -7,6 +7,12 @@ from sklearn.metrics.pairwise import cosine_similarity
 import dotenv
 import pickle
 from sentence_transformers import SentenceTransformer
+from course_id_matcher import (
+    extract_course_ids,
+    hybrid_search,
+    enhance_search_results_with_ids,
+    combine_id_and_semantic_results
+)
 
 
 dotenv.load_dotenv()
@@ -74,15 +80,18 @@ Student Request:
         return user_query  # Fallback to original query
 
 
-def search_courses(user_query, df_path='data/202508_processed.pkl', top_k=50, use_gpt=True):
+def search_courses(user_query, df_path='data/202508_processed.pkl', top_k=50, use_gpt=True, use_id_matching=True):
     """
-    Search for courses matching a user's query using semantic similarity.
+    Search for courses matching a user's query using hybrid approach:
+    - Course ID matching (exact/fuzzy) if IDs are mentioned
+    - Semantic similarity search
     
     Args:
         user_query (str): Natural language description of course interests
         df_path (str): Path to the processed courses pickle file
         top_k (int): Number of top results to return
         use_gpt (bool): Whether to use GPT to refine the query first
+        use_id_matching (bool): Whether to enable course ID matching
         
     Returns:
         pandas.DataFrame: DataFrame containing the top_k matching courses
@@ -92,6 +101,11 @@ def search_courses(user_query, df_path='data/202508_processed.pkl', top_k=50, us
     df = pd.read_pickle(df_path)
     print(f"Loaded {len(df)} courses")
     
+    # Check for course IDs in query
+    mentioned_ids = extract_course_ids(user_query) if use_id_matching else []
+    if mentioned_ids:
+        print(f"Found course IDs in query: {', '.join(mentioned_ids)}")
+    
     # Generate idealized query if requested
     if use_gpt:
         print(f"\nOriginal query: '{user_query}'")
@@ -99,6 +113,16 @@ def search_courses(user_query, df_path='data/202508_processed.pkl', top_k=50, us
         print(f"Idealized query: '{query_for_search}'")
     else:
         query_for_search = user_query
+    
+    # Perform course ID matching if enabled and IDs found
+    id_results = pd.DataFrame()
+    if use_id_matching and mentioned_ids:
+        id_results = hybrid_search(user_query, df, top_k=top_k)
+        if len(id_results) > 0:
+            # Add similarity scores for ID matches (set to high value)
+            if 'similarity_score' not in id_results.columns:
+                id_results['similarity_score'] = 0.95  # High score for exact matches
+            print(f"Found {len(id_results)} courses matching mentioned IDs")
     
     # Generate embedding for the query
     model = SentenceTransformer('all-MiniLM-L6-v2')
@@ -113,13 +137,28 @@ def search_courses(user_query, df_path='data/202508_processed.pkl', top_k=50, us
     # Get top k matches
     top_indices = similarities.argsort()[-top_k:][::-1]
     
-    # Create results DataFrame
-    results = df.iloc[top_indices].copy()
-    results['similarity_score'] = similarities[top_indices]
+    # Create semantic results DataFrame
+    semantic_results = df.iloc[top_indices].copy()
+    semantic_results['similarity_score'] = similarities[top_indices]
+    
+    # Enhance semantic results by boosting mentioned courses
+    if use_id_matching and mentioned_ids:
+        semantic_results = enhance_search_results_with_ids(
+            user_query, semantic_results, df, boost_factor=1.5
+        )
     
     # Reorder columns for better readability
-    results = results[['course_id', 'title', 'description', 'prerequisites', 
-                       'meeting_times', 'similarity_score', 'embedding']]
+    semantic_results = semantic_results[['course_id', 'title', 'description', 'prerequisites', 
+                                          'meeting_times', 'similarity_score', 'embedding']]
+    
+    # Combine ID matches with semantic results
+    if use_id_matching and len(id_results) > 0:
+        # Ensure id_results has same columns
+        id_results = id_results[['course_id', 'title', 'description', 'prerequisites', 
+                               'meeting_times', 'similarity_score', 'embedding']]
+        results = combine_id_and_semantic_results(id_results, semantic_results, top_k=top_k)
+    else:
+        results = semantic_results
     
     return results
 
@@ -146,3 +185,33 @@ def print_course_results(results_df):
         desc = row['description'][:200] if row['description'] else "No description available"
         print(f"Description: {desc}...")
         print(f"{'-'*80}\n")
+
+
+def main():
+
+    num_results = int(os.getenv('NUM_RESULTS', 10))
+    
+    # Check if query was provided as cli arg
+    if len(sys.argv) > 1:
+        user_query = sys.argv[1]
+    else:
+        # Interactive mode: prompt for query
+        user_query = input("Enter your course search query: ").strip()
+        if not user_query:
+            print("No query provided. Exiting.")
+            return
+    
+    # Perform the search
+    results = search_courses(
+        user_query=user_query,
+        df_path='data/202508_processed.pkl',
+        top_k=num_results,
+        use_gpt=True
+    )
+    
+    # Print the results
+    print_course_results(results)
+
+
+if __name__ == "__main__":
+    main()
