@@ -70,6 +70,62 @@ The search system uses a **two-stage approach**:
 
 This approach significantly improves search accuracy by translating student language into the formal academic language used in course catalogs.
 
+## Course Recommendation Chatbot
+
+The chatbot provides an interactive interface for course scheduling and information queries. It automatically classifies your questions and routes them to the appropriate handler.
+
+### Interactive Mode
+
+```bash
+# Start interactive chatbot session
+python chatbot.py
+
+# With custom data file
+python chatbot.py --df-path data/202408_processed.pkl
+```
+
+### Single Query Mode
+
+```bash
+# Process a single query
+python chatbot.py --query "What is CS 3510?"
+python chatbot.py --query "What courses are available on MWF mornings?"
+python chatbot.py --query "I want to learn about machine learning"
+```
+
+### Chatbot Capabilities
+
+The chatbot can handle several types of queries:
+
+1. **Course ID Lookup**: Direct queries about specific courses
+   - "What is CS 3510?"
+   - "Tell me about MATH 2106"
+   - "CS1332" (handles spacing variations with fuzzy matching)
+
+2. **Time/Section Queries**: Questions about course availability during specific times
+   - "What courses are available on Monday, Wednesday, Friday mornings?"
+   - "Show me courses on TR afternoons"
+   - "What sections does CS 3510 have?"
+
+3. **Course Recommendations**: Requests for course suggestions based on interests
+   - "I want to learn about neural networks"
+   - "Recommend courses for data science"
+   - "What courses cover machine learning?"
+
+4. **General Questions**: Other scheduling and course-related questions
+   - "Can I take CS 3510 and CS 1332 at the same time?"
+   - "What are the prerequisites for CS 7641?"
+
+### How It Works
+
+The chatbot uses **intent classification** to automatically detect the type of question:
+
+- **Regex matching** for course IDs (e.g., "CS 3510", "MATH2106")
+- **Fuzzy matching** for typos and variations in course IDs
+- **Keyword detection** for time/section queries (days, times, scheduling keywords)
+- **Semantic search integration** for recommendations and general queries
+- **GPT-powered responses** for complex questions with course context
+
 ## Features
 
 - Course information extraction
@@ -77,6 +133,9 @@ This approach significantly improves search accuracy by translating student lang
 - Prerequisites parsing (AND/OR trees)
 - Semantic embeddings for course descriptions (384-dimensional vectors)
 - Intelligent semantic search with GPT-3.5-turbo query refinement
+- Interactive chatbot for course scheduling and information queries
+- Course ID lookup with regex and fuzzy matching
+- Time/section-based course filtering
 - Automatic pickle file generation for easy data persistence
 
 ## DataFrame Structure
