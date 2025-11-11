@@ -66,11 +66,15 @@ def build_prompt(query: str, df: pd.DataFrame) -> str:
         valid_course_ids.append(course_id)
         sections_str = _format_sections(row.get("meeting_times"))
         prereqs_str = row.get("prerequisites") or ""
+        department_str = row.get("department") or "Unknown"
+        level_str = "Graduate" if row.get("is_graduate_level") else "Undergraduate"
         course_lines.append(
             f"{course_id}: {row['title']}\n"
             f"Description: {row['description']}\n"
             f"Prerequisites: {prereqs_str}\n"
-            f"Sections: {sections_str}"
+            f"Sections: {sections_str}\n"
+            f"Department (internal): {department_str}\n"
+            f"Level (internal): {level_str}"
         )
     course_string = "\n\n".join(course_lines)
     valid_ids_list = ", ".join(valid_course_ids)
@@ -99,18 +103,19 @@ REQUIREMENTS:
   - If the student requests minimal prerequisites or entry-friendly options, prefer courses with no/low prerequisites.
   - If the student lacks a specific prerequisite (e.g., says they have not taken X), avoid recommending courses that explicitly require that prerequisite.
   - If the student requests specific prerequisites (e.g., needs a course that requires calculus), favor courses whose prerequisites reflect that requirement.
+- Use the provided department/school and course level metadata to judge fit. These fields are for internal reasoning—do not echo department names or the words "undergraduate"/"graduate" unless the student specifically requests that detail.
 - Recommend ONLY courses whose course_id appears in the Course Options list above - NO EXCEPTIONS
 - For each recommendation include:
   1. Course number
   2. Course name
-  3. Two-sentence explanation focused on the student's specific profile/goals, explicitly referencing schedule/prerequisite fit when relevant
+  3. Two-sentence explanation focused on the student's specific profile/goals, explicitly referencing schedule constraints when relevant. Only discuss prerequisites if the student explicitly asked about them.
   4. Confidence level (High/Medium/Low)
   5. Available sections (from provided data)
   6. Prerequisites (as provided)
 
 FORMAT (Markdown):
 1. **COURSEXXX: COURSE_TITLE**
-Rationale: [Two clear sentences explaining fit; you may mention prerequisites, schedule, or other courses in your explanation, but ONLY recommend courses from the VALID COURSE IDs list]
+Rationale: [Two clear sentences explaining fit; mention prerequisites only when the student explicitly raised them. You may still reference schedule needs or related courses when helpful, but ONLY recommend courses from the VALID COURSE IDs list]
 Sections: [COPY EXACTLY as shown in Course Options above - e.g., "Section A: MW 0930 - 1045; Section B: MW 1400 - 1515" or "None listed" if that's what was provided]
 Prerequisites: [COPY EXACTLY as shown in Course Options above, or "None explicitly stated" if empty]
 Confidence: [Level]

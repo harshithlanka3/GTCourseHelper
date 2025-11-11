@@ -76,6 +76,8 @@ This approach significantly improves search accuracy by translating student lang
 - Meeting times parsing  
 - Prerequisites parsing (AND/OR trees)
 - Semantic embeddings for course descriptions (384-dimensional vectors)
+- Department/school classification derived from course prefixes
+- Graduate-level flag (courses above the 4000-level are marked as graduate)
 - Intelligent semantic search with GPT-3.5-turbo query refinement
 - Automatic pickle file generation for easy data persistence
 
@@ -90,4 +92,6 @@ The processed DataFrame contains the following columns:
 | `description` | str | Course description |
 | `meeting_times` | dict | Dictionary mapping section IDs to their meeting times (e.g., `{"A": ["MWF 0900-0950"]}`) |
 | `prerequisites` | str | Human-readable prerequisite requirements (AND/OR logic) |
+| `department` | str | Department or school associated with the course prefix (e.g., "Computer Science") |
+| `is_graduate_level` | bool | `True` if the course number is above 4000, otherwise `False` |
 | `embedding` | list | 384-dimensional semantic embedding vector |

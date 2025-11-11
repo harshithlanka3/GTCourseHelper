@@ -101,6 +101,15 @@ def search_courses(user_query, df_path='data/202508_processed.pkl', top_k=50, us
     df = pd.read_pickle(df_path)
     print(f"Loaded {len(df)} courses")
     
+    # Ensure new metadata columns are present even for legacy pickles
+    if 'department' not in df.columns:
+        df['department'] = df['course_id'].str.split().str[0]
+    
+    if 'is_graduate_level' not in df.columns:
+        numeric_part = df['course_id'].str.extract(r'(\d{4})')[0].astype(float)
+        df['is_graduate_level'] = numeric_part.fillna(0) > 4000
+        df['is_graduate_level'] = df['is_graduate_level'].fillna(False)
+    
     # Check for course IDs in query
     mentioned_ids = extract_course_ids(user_query) if use_id_matching else []
     if mentioned_ids:
@@ -148,14 +157,36 @@ def search_courses(user_query, df_path='data/202508_processed.pkl', top_k=50, us
         )
     
     # Reorder columns for better readability
-    semantic_results = semantic_results[['course_id', 'title', 'description', 'prerequisites', 
-                                          'meeting_times', 'similarity_score', 'embedding']]
+    semantic_results = semantic_results[
+        [
+            'course_id',
+            'title',
+            'description',
+            'prerequisites',
+            'meeting_times',
+            'department',
+            'is_graduate_level',
+            'similarity_score',
+            'embedding'
+        ]
+    ]
     
     # Combine ID matches with semantic results
     if use_id_matching and len(id_results) > 0:
         # Ensure id_results has same columns
-        id_results = id_results[['course_id', 'title', 'description', 'prerequisites', 
-                               'meeting_times', 'similarity_score', 'embedding']]
+        id_results = id_results[
+            [
+                'course_id',
+                'title',
+                'description',
+                'prerequisites',
+                'meeting_times',
+                'department',
+                'is_graduate_level',
+                'similarity_score',
+                'embedding'
+            ]
+        ]
         results = combine_id_and_semantic_results(id_results, semantic_results, top_k=top_k)
     else:
         results = semantic_results
