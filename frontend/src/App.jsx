@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import ChatInterface from './components/ChatInterface'
+import React from 'react'
+import ChatPage from './pages/ChatPage'
 import './App.css'
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
         <p>Your intelligent course recommendation assistant</p>
       </header>
       <main className="App-main">
-        <ChatInterface />
+        <ChatPage />
       </main>
     </div>
   )

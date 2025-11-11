@@ -1,0 +1,133 @@
+.Sidebar {
+    width: 260px;
+    background: #1e1f22;
+    color: white;
+    padding: 16px;
+    border-right: 1px solid #333;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .Sidebar h2 {
+    margin-bottom: 12px;
+    flex-shrink: 0;
+  }
+  
+  .Sidebar-new {
+    margin-bottom: 16px;
+    background: #3874f2;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+  
+  .Sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+  }
+  
+  .Sidebar-list li {
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .Sidebar-list li.active,
+  .Sidebar-list li:hover {
+    background: #2f3237;
+  }
+
+  .Sidebar-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .Sidebar-item-title {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .Sidebar-item-actions {
+    display: flex;
+    gap: 4px;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .Sidebar-list li:hover .Sidebar-item-actions {
+    opacity: 1;
+  }
+
+  .Sidebar-item-rename,
+  .Sidebar-item-delete {
+    background: transparent;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    padding: 2px 4px;
+    font-size: 14px;
+    line-height: 1;
+  }
+
+  .Sidebar-item-rename:hover {
+    color: #3874f2;
+  }
+
+  .Sidebar-item-delete:hover {
+    color: #e74c3c;
+  }
+
+  .Sidebar-edit {
+    display: flex;
+    gap: 4px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .Sidebar-edit-input {
+    flex: 1;
+    background: #2f3237;
+    border: 1px solid #3874f2;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .Sidebar-edit-input:focus {
+    outline: none;
+    border-color: #5a8ff5;
+  }
+
+  .Sidebar-edit-save,
+  .Sidebar-edit-cancel {
+    background: transparent;
+    border: none;
+    color: #ccc;
+    cursor: pointer;
+    padding: 4px;
+    font-size: 16px;
+    line-height: 1;
+  }
+
+  .Sidebar-edit-save:hover {
+    color: #4caf50;
+  }
+
+  .Sidebar-edit-cancel:hover {
+    color: #e74c3c;
+  }

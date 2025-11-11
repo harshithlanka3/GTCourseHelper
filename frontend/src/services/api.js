@@ -33,5 +33,31 @@ export const getRecommendations = async (query, topK = 50) => {
   return response.data
 }
 
+// Session Management Functions
+export const createSession = async (title = null) => {
+  const response = await api.post('/api/session', { title })
+  return response.data
+}
+
+export const listSessions = async () => {
+  const response = await api.get('/api/sessions')
+  return response.data
+}
+
+export const getSessionHistory = async (sessionId) => {
+  const response = await api.get(`/api/session/${sessionId}`)
+  return response.data
+}
+
+export const deleteSession = async (sessionId) => {
+  const response = await api.delete(`/api/session/${sessionId}`)
+  return response.data
+}
+
+export const renameSession = async (sessionId, title) => {
+  const response = await api.patch(`/api/session/${sessionId}`, { title })
+  return response.data
+}
+
 export default api
 
