@@ -68,6 +68,34 @@ function Message({ message }) {
   const isUser = message.role === 'user'
   const recommendations = !isUser ? parseCourseRecommendations(message.content) : []
 
+  const sortedRecommendations = React.useMemo(() => {
+    if (!recommendations || recommendations.length === 0) {
+      return []
+    }
+
+    const confidenceOrder = {
+      high: 0,
+      medium: 1,
+      low: 2,
+    }
+
+    return recommendations
+      .map((course, index) => ({ course, index }))
+      .sort((aEntry, bEntry) => {
+        const aConf = (aEntry.course.confidence || '').toLowerCase()
+        const bConf = (bEntry.course.confidence || '').toLowerCase()
+        const aRank = confidenceOrder[aConf] ?? 3
+        const bRank = confidenceOrder[bConf] ?? 3
+
+        if (aRank !== bRank) {
+          return aRank - bRank
+        }
+
+        return aEntry.index - bEntry.index
+      })
+      .map((entry) => entry.course)
+  }, [recommendations])
+
   return (
     <div className={`Message Message-${message.role}`}>
       <div className="Message-avatar">
@@ -76,9 +104,9 @@ function Message({ message }) {
       <div className="Message-content">
         {isUser ? (
           <p>{message.content}</p>
-        ) : recommendations.length > 0 ? (
+        ) : sortedRecommendations.length > 0 ? (
           <div className="CourseRecommendations">
-            {recommendations.map((course, index) => {
+            {sortedRecommendations.map((course, index) => {
               const sectionsList = toList(course.sections)
               const confidenceClass = course.confidence
                 ? `CourseCard-confidence-${course.confidence.toLowerCase().replace(/[^a-z]/g, '')}`

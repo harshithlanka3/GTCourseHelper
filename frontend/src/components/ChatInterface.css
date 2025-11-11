@@ -8,3 +8,39 @@
   background: white;
 }
 
+.ChatInterface-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-top: 1px solid #e5e7eb;
+  background: #f8fafc;
+}
+
+.ChatInterface-controls {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ChatInterface-reset {
+  background: transparent;
+  border: 1px solid #cbd5e1;
+  color: #1e3a8a;
+  font-weight: 600;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.ChatInterface-reset:hover:not(:disabled) {
+  background: #1e3a8a;
+  color: white;
+  border-color: #1e3a8a;
+}
+
+.ChatInterface-reset:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+

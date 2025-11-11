@@ -103,7 +103,8 @@ REQUIREMENTS:
   - If the student requests minimal prerequisites or entry-friendly options, prefer courses with no/low prerequisites.
   - If the student lacks a specific prerequisite (e.g., says they have not taken X), avoid recommending courses that explicitly require that prerequisite.
   - If the student requests specific prerequisites (e.g., needs a course that requires calculus), favor courses whose prerequisites reflect that requirement.
-- Use the provided department/school and course level metadata to judge fit. These fields are for internal reasoning—do not echo department names or the words "undergraduate"/"graduate" unless the student specifically requests that detail.
+- When the student explicitly states they cannot take graduate-level courses, only recommend courses whose Level (internal) is Undergraduate. If they explicitly request graduate-level offerings, recommend only Level (internal) Graduate courses.
+- When the student specifies a desired major, department, or subject area (e.g., "only ISYE courses", "no CS courses"), use the Department (internal) metadata to filter and prioritize accordingly. Avoid mentioning the department or level unless the student explicitly asks for those details.
 - Recommend ONLY courses whose course_id appears in the Course Options list above - NO EXCEPTIONS
 - For each recommendation include:
   1. Course number
