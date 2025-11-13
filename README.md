@@ -81,6 +81,66 @@ This approach significantly improves search accuracy by translating student lang
 - Intelligent semantic search with GPT-3.5-turbo query refinement
 - Automatic pickle file generation for easy data persistence
 
+## Analytics & Visualization
+
+Explore the embedding space with interactive 3D visualizations:
+
+### Install Visualization Dependencies
+
+```bash
+pip install -r requirements-viz.txt
+```
+
+### 3D Embedding Visualization
+
+Create an interactive 3D scatter plot of course embeddings:
+
+```bash
+# Basic usage (default: colored by department)
+python visualizations/plot_embeddings_3d.py
+
+# Color by graduate level
+python visualizations/plot_embeddings_3d.py --color-by graduate
+
+# Use UMAP instead of PCA (requires umap-learn)
+python visualizations/plot_embeddings_3d.py --method umap
+
+# Limit to 500 courses for faster processing
+python visualizations/plot_embeddings_3d.py --limit 500
+
+# Custom data path and output
+python visualizations/plot_embeddings_3d.py --data-path data/202408_processed.pkl --output visualizations/my_viz.html
+
+# Save as static image (PNG) in addition to HTML
+python visualizations/plot_embeddings_3d.py --img
+
+# Save only as image, skip HTML
+python visualizations/plot_embeddings_3d.py --img-only
+
+# Save as PDF instead of PNG
+python visualizations/plot_embeddings_3d.py --img-only --img-format pdf
+```
+
+The script will:
+- Load processed course data from the pickle file
+- Reduce embeddings to 3D using PCA, UMAP (default), or t-SNE
+- Create an interactive Plotly visualization with hover tooltips
+- Save an HTML file that you can open in any browser (unless `--img-only` is used)
+- Optionally save a static image (PNG, PDF, SVG, or JPG)
+
+**Features:**
+- Hover over points to see course ID, title, department, and description
+- Rotate, zoom, and pan the 3D view (in HTML)
+- Color courses by department or graduate level
+- Export-ready HTML file (no server required)
+- Static image export for presentations/reports (PNG, PDF, SVG, JPG)
+
+The visualization helps you:
+- Identify clusters of similar courses
+- Validate that embeddings separate subjects as expected
+- Explore the semantic structure of the course catalog
+- Discover relationships between courses across departments
+
 ## DataFrame Structure
 
 The processed DataFrame contains the following columns:
