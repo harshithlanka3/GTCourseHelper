@@ -2,8 +2,8 @@ import json
 import os
 import sys
 import pandas as pd
-from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
+from embedding_utils import get_model
 
 # Parse command line arguments
 if len(sys.argv) > 1:
@@ -16,11 +16,11 @@ input_basename = os.path.splitext(os.path.basename(TERM_FILE))[0]
 input_dir = os.path.dirname(TERM_FILE) if os.path.dirname(TERM_FILE) else ""
 OUTPUT_FILE = os.path.join(input_dir, f"{input_basename}_processed.pkl") if input_dir else f"{input_basename}_processed.pkl"
 
-# Initialize the local embedding model
+# Initialize the local embedding model (using cached model from embedding_utils)
 print(f"Processing: {TERM_FILE}")
 print(f"Output will be saved to: {OUTPUT_FILE}")
 print("\nLoading embedding model (this may take a moment on first run)...")
-model = SentenceTransformer('all-MiniLM-L6-v2')
+model = get_model()
 print(f"Model loaded: {model.get_sentence_embedding_dimension()} dimensions")
 
 with open(TERM_FILE, "r") as f:
