@@ -1,0 +1,60 @@
+{
+  "query": "Machine learning courses like CS 7641",
+  "category": "mixed",
+  "expected_courses": [
+    "CS 7641"
+  ],
+  "execution_times": {
+    "embedding": 0.6848621368408203,
+    "id_matching": 0.0014197826385498047,
+    "combined": 0.7375907897949219
+  },
+  "metrics": {
+    "result_counts": {
+      "embedding": 20,
+      "id_matching": 1,
+      "combined": 20
+    },
+    "overlap": {
+      "embedding_vs_combined": 1.0,
+      "id_vs_combined": 0.05,
+      "embedding_vs_id": 0.05
+    },
+    "rank_correlations": {
+      "embedding_vs_combined": [
+        0.9849624060150375,
+        20
+      ],
+      "id_vs_combined": [
+        0.0,
+        1
+      ],
+      "embedding_vs_id": [
+        0.0,
+        1
+      ]
+    },
+    "coverage": {
+      "embedding": {
+        "found_count": 1,
+        "total_expected": 1,
+        "coverage_ratio": 1.0
+      },
+      "id_matching": {
+        "found_count": 1,
+        "total_expected": 1,
+        "coverage_ratio": 1.0
+      },
+      "combined": {
+        "found_count": 1,
+        "total_expected": 1,
+        "coverage_ratio": 1.0
+      }
+    }
+  },
+  "result_counts": {
+    "embedding": 20,
+    "id_matching": 1,
+    "combined": 20
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "query": "MATH 2106 and related courses",
+  "category": "id-only",
+  "expected_courses": [
+    "MATH 2106"
+  ],
+  "execution_times": {
+    "embedding": 0.6821184158325195,
+    "id_matching": 0.001499176025390625,
+    "combined": 0.7044093608856201
+  },
+  "metrics": {
+    "result_counts": {
+      "embedding": 20,
+      "id_matching": 1,
+      "combined": 20
+    },
+    "overlap": {
+      "embedding_vs_combined": 0.9047619047619048,
+      "id_vs_combined": 0.05,
+      "embedding_vs_id": 0.0
+    },
+    "rank_correlations": {
+      "embedding_vs_combined": [
+        1.0,
+        19
+      ],
+      "id_vs_combined": [
+        0.0,
+        1
+      ],
+      "embedding_vs_id": [
+        0.0,
+        0
+      ]
+    },
+    "coverage": {
+      "embedding": {
+        "found_count": 0,
+        "total_expected": 1,
+        "coverage_ratio": 0.0
+      },
+      "id_matching": {
+        "found_count": 1,
+        "total_expected": 1,
+        "coverage_ratio": 1.0
+      },
+      "combined": {
+        "found_count": 1,
+        "total_expected": 1,
+        "coverage_ratio": 1.0
+      }
+    }
+  },
+  "result_counts": {
+    "embedding": 20,
+    "id_matching": 1,
+    "combined": 20
+  }
+}

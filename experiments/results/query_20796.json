@@ -1,0 +1,41 @@
+{
+  "query": "Graduate courses in computer vision",
+  "category": "graduate-level",
+  "expected_courses": null,
+  "execution_times": {
+    "embedding": 0.6915252208709717,
+    "id_matching": 0.0003190040588378906,
+    "combined": 0.7225112915039062
+  },
+  "metrics": {
+    "result_counts": {
+      "embedding": 20,
+      "id_matching": 0,
+      "combined": 20
+    },
+    "overlap": {
+      "embedding_vs_combined": 1.0,
+      "id_vs_combined": 0.0,
+      "embedding_vs_id": 0.0
+    },
+    "rank_correlations": {
+      "embedding_vs_combined": [
+        1.0,
+        20
+      ],
+      "id_vs_combined": [
+        0.0,
+        0
+      ],
+      "embedding_vs_id": [
+        0.0,
+        0
+      ]
+    }
+  },
+  "result_counts": {
+    "embedding": 20,
+    "id_matching": 0,
+    "combined": 20
+  }
+}

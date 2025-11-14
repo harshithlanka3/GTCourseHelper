@@ -1,0 +1,6 @@
+# Results directory - contains generated output files
+# Note: Currently allowing results/ and *.json to be tracked
+# Uncomment below to ignore them:
+# results/
+# *.json
+# *.csv

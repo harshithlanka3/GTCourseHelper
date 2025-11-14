@@ -1,0 +1,60 @@
+{
+  "query": "I need CS 1332",
+  "category": "id-only",
+  "expected_courses": [
+    "CS 1332"
+  ],
+  "execution_times": {
+    "embedding": 0.7645478248596191,
+    "id_matching": 0.0015950202941894531,
+    "combined": 0.7341208457946777
+  },
+  "metrics": {
+    "result_counts": {
+      "embedding": 20,
+      "id_matching": 1,
+      "combined": 20
+    },
+    "overlap": {
+      "embedding_vs_combined": 0.9047619047619048,
+      "id_vs_combined": 0.05,
+      "embedding_vs_id": 0.0
+    },
+    "rank_correlations": {
+      "embedding_vs_combined": [
+        1.0,
+        19
+      ],
+      "id_vs_combined": [
+        0.0,
+        1
+      ],
+      "embedding_vs_id": [
+        0.0,
+        0
+      ]
+    },
+    "coverage": {
+      "embedding": {
+        "found_count": 0,
+        "total_expected": 1,
+        "coverage_ratio": 0.0
+      },
+      "id_matching": {
+        "found_count": 1,
+        "total_expected": 1,
+        "coverage_ratio": 1.0
+      },
+      "combined": {
+        "found_count": 1,
+        "total_expected": 1,
+        "coverage_ratio": 1.0
+      }
+    }
+  },
+  "result_counts": {
+    "embedding": 20,
+    "id_matching": 1,
+    "combined": 20
+  }
+}
