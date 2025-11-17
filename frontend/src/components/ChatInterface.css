@@ -6,6 +6,17 @@
   margin: 0 auto;
   width: 100%;
   background: white;
+  transition: margin-left 0.3s ease;
+}
+
+.ChatInterface.sidebar-open {
+  margin-left: 18rem;
+}
+
+@media (max-width: 768px) {
+  .ChatInterface.sidebar-open {
+    margin-left: 0;
+  }
 }
 
 .ChatInterface-footer {
