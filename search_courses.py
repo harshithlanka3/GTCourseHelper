@@ -6,13 +6,13 @@ import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 import dotenv
 import pickle
-from sentence_transformers import SentenceTransformer
 from course_id_matcher import (
     extract_course_ids,
     hybrid_search,
     enhance_search_results_with_ids,
     combine_id_and_semantic_results
 )
+from embedding_utils import get_query_embedding
 
 
 dotenv.load_dotenv()
@@ -133,9 +133,8 @@ def search_courses(user_query, df_path='data/202508_processed.pkl', top_k=50, us
                 id_results['similarity_score'] = 0.95  # High score for exact matches
             print(f"Found {len(id_results)} courses matching mentioned IDs")
     
-    # Generate embedding for the query
-    model = SentenceTransformer('all-MiniLM-L6-v2')
-    query_embedding = model.encode(query_for_search).reshape(1, -1)
+    # Generate embedding for the query (using cached model and query encoding)
+    query_embedding = get_query_embedding(query_for_search)
     
     # Get all course embeddings
     course_embeddings = np.array(df['embedding'].tolist())
