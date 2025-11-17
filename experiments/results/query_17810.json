@@ -1,0 +1,41 @@
+{
+  "query": "I'm interested in computer vision and image processing",
+  "category": "semantic-only",
+  "expected_courses": null,
+  "execution_times": {
+    "embedding": 0.725283145904541,
+    "id_matching": 0.00032401084899902344,
+    "combined": 0.7669169902801514
+  },
+  "metrics": {
+    "result_counts": {
+      "embedding": 20,
+      "id_matching": 0,
+      "combined": 20
+    },
+    "overlap": {
+      "embedding_vs_combined": 1.0,
+      "id_vs_combined": 0.0,
+      "embedding_vs_id": 0.0
+    },
+    "rank_correlations": {
+      "embedding_vs_combined": [
+        1.0,
+        20
+      ],
+      "id_vs_combined": [
+        0.0,
+        0
+      ],
+      "embedding_vs_id": [
+        0.0,
+        0
+      ]
+    }
+  },
+  "result_counts": {
+    "embedding": 20,
+    "id_matching": 0,
+    "combined": 20
+  }
+}

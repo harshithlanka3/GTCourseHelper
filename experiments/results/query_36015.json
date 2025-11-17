@@ -1,0 +1,60 @@
+{
+  "query": "I want to take CS 4641 or other machine learning courses",
+  "category": "mixed",
+  "expected_courses": [
+    "CS 4641"
+  ],
+  "execution_times": {
+    "embedding": 0.7594070434570312,
+    "id_matching": 0.0014166831970214844,
+    "combined": 0.7931196689605713
+  },
+  "metrics": {
+    "result_counts": {
+      "embedding": 20,
+      "id_matching": 1,
+      "combined": 20
+    },
+    "overlap": {
+      "embedding_vs_combined": 1.0,
+      "id_vs_combined": 0.05,
+      "embedding_vs_id": 0.05
+    },
+    "rank_correlations": {
+      "embedding_vs_combined": [
+        0.9172932330827066,
+        20
+      ],
+      "id_vs_combined": [
+        0.0,
+        1
+      ],
+      "embedding_vs_id": [
+        0.0,
+        1
+      ]
+    },
+    "coverage": {
+      "embedding": {
+        "found_count": 1,
+        "total_expected": 1,
+        "coverage_ratio": 1.0
+      },
+      "id_matching": {
+        "found_count": 1,
+        "total_expected": 1,
+        "coverage_ratio": 1.0
+      },
+      "combined": {
+        "found_count": 1,
+        "total_expected": 1,
+        "coverage_ratio": 1.0
+      }
+    }
+  },
+  "result_counts": {
+    "embedding": 20,
+    "id_matching": 1,
+    "combined": 20
+  }
+}

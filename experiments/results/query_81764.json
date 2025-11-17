@@ -1,0 +1,61 @@
+{
+  "query": "CS 1332 CS 1331",
+  "category": "edge-case",
+  "expected_courses": [
+    "CS 1332",
+    "CS 1331"
+  ],
+  "execution_times": {
+    "embedding": 0.9896557331085205,
+    "id_matching": 0.0014553070068359375,
+    "combined": 0.7092199325561523
+  },
+  "metrics": {
+    "result_counts": {
+      "embedding": 20,
+      "id_matching": 2,
+      "combined": 20
+    },
+    "overlap": {
+      "embedding_vs_combined": 0.8181818181818182,
+      "id_vs_combined": 0.1,
+      "embedding_vs_id": 0.0
+    },
+    "rank_correlations": {
+      "embedding_vs_combined": [
+        1.0,
+        18
+      ],
+      "id_vs_combined": [
+        0.9999999999999999,
+        2
+      ],
+      "embedding_vs_id": [
+        0.0,
+        0
+      ]
+    },
+    "coverage": {
+      "embedding": {
+        "found_count": 0,
+        "total_expected": 2,
+        "coverage_ratio": 0.0
+      },
+      "id_matching": {
+        "found_count": 2,
+        "total_expected": 2,
+        "coverage_ratio": 1.0
+      },
+      "combined": {
+        "found_count": 2,
+        "total_expected": 2,
+        "coverage_ratio": 1.0
+      }
+    }
+  },
+  "result_counts": {
+    "embedding": 20,
+    "id_matching": 2,
+    "combined": 20
+  }
+}

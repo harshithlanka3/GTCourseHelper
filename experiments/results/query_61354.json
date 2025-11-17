@@ -1,0 +1,41 @@
+{
+  "query": "MATH courses on linear algebra and calculus",
+  "category": "department-specific",
+  "expected_courses": null,
+  "execution_times": {
+    "embedding": 0.8360812664031982,
+    "id_matching": 0.00047469139099121094,
+    "combined": 0.7307395935058594
+  },
+  "metrics": {
+    "result_counts": {
+      "embedding": 20,
+      "id_matching": 0,
+      "combined": 20
+    },
+    "overlap": {
+      "embedding_vs_combined": 1.0,
+      "id_vs_combined": 0.0,
+      "embedding_vs_id": 0.0
+    },
+    "rank_correlations": {
+      "embedding_vs_combined": [
+        1.0,
+        20
+      ],
+      "id_vs_combined": [
+        0.0,
+        0
+      ],
+      "embedding_vs_id": [
+        0.0,
+        0
+      ]
+    }
+  },
+  "result_counts": {
+    "embedding": 20,
+    "id_matching": 0,
+    "combined": 20
+  }
+}

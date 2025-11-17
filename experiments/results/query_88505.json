@@ -1,0 +1,41 @@
+{
+  "query": "Courses with minimal prerequisites",
+  "category": "edge-case",
+  "expected_courses": null,
+  "execution_times": {
+    "embedding": 0.7482254505157471,
+    "id_matching": 0.00033354759216308594,
+    "combined": 0.6899845600128174
+  },
+  "metrics": {
+    "result_counts": {
+      "embedding": 20,
+      "id_matching": 0,
+      "combined": 20
+    },
+    "overlap": {
+      "embedding_vs_combined": 1.0,
+      "id_vs_combined": 0.0,
+      "embedding_vs_id": 0.0
+    },
+    "rank_correlations": {
+      "embedding_vs_combined": [
+        1.0,
+        20
+      ],
+      "id_vs_combined": [
+        0.0,
+        0
+      ],
+      "embedding_vs_id": [
+        0.0,
+        0
+      ]
+    }
+  },
+  "result_counts": {
+    "embedding": 20,
+    "id_matching": 0,
+    "combined": 20
+  }
+}
