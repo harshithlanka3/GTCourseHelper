@@ -12,13 +12,19 @@ from uuid import uuid4
 import pandas as pd
 import sys
 import os
+import json
+from dotenv import load_dotenv
 
 # Add parent directory to path to import modules
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(project_root)
 
+# Load environment variables from .env file
+load_dotenv(os.path.join(project_root, '.env'))
+
 # Set default data path relative to project root
 DEFAULT_DF_PATH = os.path.join(project_root, 'data', '202508_processed.pkl')
+REVIEWS_FILE = os.path.join(project_root, 'data', 'course_reviews.json')
 
 from search_courses import search_courses
 from recommend_courses import build_prompt, call_gpt_recommendations, get_client, deduplicate_courses
@@ -147,6 +153,32 @@ class ChatResponse(BaseModel):
     response: str
     session_id: str
     recommendations: Optional[str] = None
+
+
+class ReviewSubmission(BaseModel):
+    course_id: str
+    difficulty: int  # 1-5
+    workload: int  # hours per week
+    would_recommend: bool
+    review_text: Optional[str] = None
+
+
+class Review(BaseModel):
+    course_id: str
+    difficulty: int
+    workload: int
+    would_recommend: bool
+    review_text: Optional[str] = None
+    timestamp: str
+
+
+class CourseReviewsResponse(BaseModel):
+    course_id: str
+    total_reviews: int
+    avg_difficulty: float
+    avg_workload: float
+    recommend_percentage: float
+    reviews: List[Review]
 
 
 # API Endpoints
@@ -280,6 +312,102 @@ async def chat_endpoint(request: ChatRequest):
         import traceback
         error_detail = f"{str(e)}\n\n{traceback.format_exc()}"
         print(f"Error in chat endpoint: {error_detail}")  # Print to server logs
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/api/reviews")
+async def submit_review(review: ReviewSubmission):
+    """Submit a course review"""
+    try:
+        # Load existing reviews from JSON file
+        if os.path.exists(REVIEWS_FILE):
+            with open(REVIEWS_FILE, 'r') as f:
+                reviews_data = json.load(f)
+        else:
+            reviews_data = {}
+        
+        # Add new review to the course's review list
+        course_id = review.course_id.upper()  # Normalize to uppercase
+        if course_id not in reviews_data:
+            reviews_data[course_id] = []
+        
+        new_review = {
+            "course_id": course_id,
+            "difficulty": review.difficulty,
+            "workload": review.workload,
+            "would_recommend": review.would_recommend,
+            "review_text": review.review_text,
+            "timestamp": datetime.utcnow().isoformat()
+        }
+        
+        reviews_data[course_id].append(new_review)
+        
+        # Save back to JSON file
+        os.makedirs(os.path.dirname(REVIEWS_FILE), exist_ok=True)
+        with open(REVIEWS_FILE, 'w') as f:
+            json.dump(reviews_data, f, indent=2)
+        
+        return {
+            "success": True, 
+            "message": "Review submitted successfully",
+            "course_id": course_id
+        }
+    except Exception as e:
+        print(f"Error submitting review: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/reviews/{course_id}", response_model=CourseReviewsResponse)
+async def get_course_reviews(course_id: str):
+    """Get all reviews for a specific course with aggregated statistics"""
+    try:
+        course_id = course_id.upper()  # Normalize to uppercase
+        
+        if not os.path.exists(REVIEWS_FILE):
+            return CourseReviewsResponse(
+                course_id=course_id,
+                total_reviews=0,
+                avg_difficulty=0.0,
+                avg_workload=0.0,
+                recommend_percentage=0.0,
+                reviews=[]
+            )
+        
+        with open(REVIEWS_FILE, 'r') as f:
+            reviews_data = json.load(f)
+        
+        course_reviews = reviews_data.get(course_id, [])
+        
+        if not course_reviews:
+            return CourseReviewsResponse(
+                course_id=course_id,
+                total_reviews=0,
+                avg_difficulty=0.0,
+                avg_workload=0.0,
+                recommend_percentage=0.0,
+                reviews=[]
+            )
+        
+        # Calculate aggregated statistics
+        total = len(course_reviews)
+        avg_difficulty = sum(r["difficulty"] for r in course_reviews) / total
+        avg_workload = sum(r["workload"] for r in course_reviews) / total
+        recommend_count = sum(1 for r in course_reviews if r["would_recommend"])
+        recommend_percentage = (recommend_count / total) * 100
+        
+        # Sort reviews by timestamp (newest first)
+        sorted_reviews = sorted(course_reviews, key=lambda x: x["timestamp"], reverse=True)
+        
+        return CourseReviewsResponse(
+            course_id=course_id,
+            total_reviews=total,
+            avg_difficulty=round(avg_difficulty, 1),
+            avg_workload=round(avg_workload, 1),
+            recommend_percentage=round(recommend_percentage, 1),
+            reviews=[Review(**r) for r in sorted_reviews]
+        )
+    except Exception as e:
+        print(f"Error fetching reviews: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
 
 

@@ -1,0 +1,191 @@
+.ConversationSidebar-toggle {
+  position: fixed;
+  top: 8rem;
+  left: 1rem;
+  z-index: 1001;
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ConversationSidebar-toggle:hover {
+  background: #1e40af;
+  transform: scale(1.05);
+}
+
+.ConversationSidebar-toggle.open {
+  left: 20rem;
+}
+
+.ConversationSidebar {
+  position: fixed;
+  top: 0;
+  left: -18rem;
+  width: 18rem;
+  height: 100vh;
+  background: #f8fafc;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  transition: left 0.3s ease;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.ConversationSidebar.open {
+  left: 0;
+}
+
+.ConversationSidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: white;
+}
+
+.ConversationSidebar-header h2 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.ConversationSidebar-new {
+  background: #1e3a8a;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.ConversationSidebar-new:hover {
+  background: #1e40af;
+}
+
+.ConversationSidebar-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem;
+}
+
+.ConversationSidebar-empty {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: #64748b;
+  font-size: 0.875rem;
+}
+
+.ConversationSidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  margin-bottom: 0.25rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: white;
+  border: 1px solid transparent;
+  position: relative;
+}
+
+.ConversationSidebar-item:hover {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.ConversationSidebar-item.active {
+  background: #dbeafe;
+  border-color: #3b82f6;
+}
+
+.ConversationSidebar-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.ConversationSidebar-item-title {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1e293b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-bottom: 0.25rem;
+}
+
+.ConversationSidebar-item.active .ConversationSidebar-item-title {
+  color: #1e3a8a;
+  font-weight: 600;
+}
+
+.ConversationSidebar-item-meta {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.ConversationSidebar-item-delete {
+  background: transparent;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  transition: all 0.2s ease;
+  position: absolute;
+  right: 0.5rem;
+  opacity: 0.8;
+}
+
+.ConversationSidebar-item-delete:hover {
+  background: #fee2e2;
+  opacity: 1;
+}
+
+/* Scrollbar styling */
+.ConversationSidebar-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ConversationSidebar-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ConversationSidebar-list::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.ConversationSidebar-list::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ConversationSidebar {
+    width: 100%;
+    left: -100%;
+  }
+
+  .ConversationSidebar-toggle.open {
+    left: calc(100% - 4rem);
+  }
+}
