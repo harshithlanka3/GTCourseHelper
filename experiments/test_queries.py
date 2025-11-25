@@ -1,16 +1,7 @@
-"""
-Easily editable test query suite for pipeline permutation experiments.
 
-To add/edit queries, simply modify the TEST_QUERIES list below.
-Each query is a dictionary with:
-- query: The actual query text
-- category: One of "semantic-only", "id-only", "mixed", "department-specific", "graduate-level", "edge-case"
-- expected_courses: Optional list of course IDs for validation
-- notes: Optional explanation of why this query is useful
-"""
 
 TEST_QUERIES = [
-    # === SEMANTIC-ONLY QUERIES ===
+    # SEMANTIC QUERIES
     {
         "query": "I want to learn machine learning and neural networks",
         "category": "semantic-only",
@@ -33,7 +24,7 @@ TEST_QUERIES = [
         "category": "semantic-only"
     },
     
-    # === ID-ONLY QUERIES ===
+    # ID
     {
         "query": "I need CS 1332",
         "category": "id-only",
@@ -56,7 +47,7 @@ TEST_QUERIES = [
         "expected_courses": ["ISYE 6501"]
     },
     
-    # === MIXED QUERIES ===
+    # MIXED QUERIES
     {
         "query": "Machine learning courses like CS 7641",
         "category": "mixed",
@@ -79,7 +70,7 @@ TEST_QUERIES = [
         "expected_courses": ["ISYE 6669"]
     },
     
-    # === DEPARTMENT-SPECIFIC QUERIES ===
+    # DEPARTMENT-SPECIFIC QUERIES
     {
         "query": "ISYE courses on optimization and operations research",
         "category": "department-specific"

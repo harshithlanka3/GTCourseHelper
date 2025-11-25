@@ -22,7 +22,7 @@ def get_client() -> OpenAI:
 
 
 def deduplicate_courses(df: pd.DataFrame) -> pd.DataFrame:
-    # Remove exact duplicates by title+description (keeps first occurrence)
+
     key = df["title"].fillna("").str.strip() + "\n" + df["description"].fillna("").str.strip()
     deduped = df.loc[~key.duplicated()].copy()
     return deduped
@@ -39,7 +39,7 @@ def _format_sections(meeting_times: dict) -> str:
 
 
 def save_course_options_to_file(df: pd.DataFrame, output_file: str) -> None:
-    """Save formatted course options to a file for inspection."""
+
     course_lines = []
     for _, row in df.iterrows():
         sections_str = _format_sections(row.get("meeting_times"))
@@ -140,7 +140,7 @@ VALIDATION: Before outputting each recommendation, verify the course_id appears 
 
 
 def call_gpt_recommendations(client: OpenAI, prompt: str) -> str:
-    # Prefer gpt-4o, fallback to gpt-3.5-turbo if needed
+
     for model in ("gpt-4o", "gpt-4o-mini", "gpt-3.5-turbo"):
         try:
             resp = client.chat.completions.create(
@@ -173,7 +173,6 @@ def main() -> None:
 
     candidates = deduplicate_courses(candidates)
 
-    # Save course options to file if requested
     if args.save_options:
         save_course_options_to_file(candidates, args.save_options)
 

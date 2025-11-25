@@ -1,7 +1,4 @@
-"""
-FastAPI backend for GTCourseHelper
-Provides REST API endpoints for course search, recommendations, and chat
-"""
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -15,14 +12,14 @@ import os
 import json
 from dotenv import load_dotenv
 
-# Add parent directory to path to import modules
+
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(project_root)
 
-# Load environment variables from .env file
+
 load_dotenv(os.path.join(project_root, '.env'))
 
-# Set default data path relative to project root
+
 DEFAULT_DF_PATH = os.path.join(project_root, 'data', '202508_processed.pkl')
 REVIEWS_FILE = os.path.join(project_root, 'data', 'course_reviews.json')
 
@@ -100,7 +97,7 @@ def build_enhanced_query(messages: List[Dict[str, str]]) -> str:
 
 app = FastAPI(title="GT Course Helper API", version="1.0.0")
 
-# CORS middleware for frontend
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["http://localhost:3000", "http://localhost:5173"],  # React dev servers
@@ -110,7 +107,7 @@ app.add_middleware(
 )
 
 
-# Request/Response Models
+
 class SearchRequest(BaseModel):
     query: str
     top_k: Optional[int] = 10
@@ -139,7 +136,7 @@ class RecommendRequest(BaseModel):
 
 
 class ChatMessage(BaseModel):
-    role: str  # "user" or "assistant"
+    role: str  
     content: str
 
 
@@ -157,8 +154,8 @@ class ChatResponse(BaseModel):
 
 class ReviewSubmission(BaseModel):
     course_id: str
-    difficulty: int  # 1-5
-    workload: int  # hours per week
+    difficulty: int  
+    workload: int  
     would_recommend: bool
     review_text: Optional[str] = None
 
@@ -181,7 +178,7 @@ class CourseReviewsResponse(BaseModel):
     reviews: List[Review]
 
 
-# API Endpoints
+
 @app.get("/")
 async def root():
     return {"message": "GT Course Helper API", "version": "1.0.0"}
@@ -201,7 +198,7 @@ async def search_courses_endpoint(request: SearchRequest):
             use_id_matching=request.use_id_matching
         )
         
-        # Convert to response format
+   
         courses = []
         for _, row in results.iterrows():
             courses.append(CourseResult(
@@ -228,7 +225,7 @@ async def recommend_courses_endpoint(request: RecommendRequest):
     Get GPT-powered course recommendations
     """
     try:
-        # Get semantic search candidates
+        # semantic search candidates
         candidates = search_courses(
             user_query=request.query,
             df_path=DEFAULT_DF_PATH,
@@ -239,7 +236,7 @@ async def recommend_courses_endpoint(request: RecommendRequest):
         
         candidates = deduplicate_courses(candidates)
         
-        # Build prompt and get GPT recommendations
+        # recommendations
         prompt = build_prompt(request.query, candidates)
         client = get_client()
         recommendations = call_gpt_recommendations(client, prompt)
@@ -264,7 +261,7 @@ async def chat_endpoint(request: ChatRequest):
         session_id = create_session(request.session_id, request.conversation_history)
         session_state = session_store[session_id]
 
-        # Append the latest user message to the in-memory session
+       
         session_state.messages.append({"role": "user", "content": request.message})
         if len(session_state.messages) > MAX_SESSION_MESSAGES:
             session_state.messages = session_state.messages[-MAX_SESSION_MESSAGES:]
@@ -296,7 +293,7 @@ async def chat_endpoint(request: ChatRequest):
         
         recommendations = call_gpt_recommendations(client, prompt)
 
-        # Persist assistant response and update timestamp
+        
         session_state.messages.append({"role": "assistant", "content": recommendations})
         if len(session_state.messages) > MAX_SESSION_MESSAGES:
             session_state.messages = session_state.messages[-MAX_SESSION_MESSAGES:]
@@ -319,15 +316,15 @@ async def chat_endpoint(request: ChatRequest):
 async def submit_review(review: ReviewSubmission):
     """Submit a course review"""
     try:
-        # Load existing reviews from JSON file
+        
         if os.path.exists(REVIEWS_FILE):
             with open(REVIEWS_FILE, 'r') as f:
                 reviews_data = json.load(f)
         else:
             reviews_data = {}
         
-        # Add new review to the course's review list
-        course_id = review.course_id.upper()  # Normalize to uppercase
+        
+        course_id = review.course_id.upper()  
         if course_id not in reviews_data:
             reviews_data[course_id] = []
         
@@ -342,7 +339,7 @@ async def submit_review(review: ReviewSubmission):
         
         reviews_data[course_id].append(new_review)
         
-        # Save back to JSON file
+        
         os.makedirs(os.path.dirname(REVIEWS_FILE), exist_ok=True)
         with open(REVIEWS_FILE, 'w') as f:
             json.dump(reviews_data, f, indent=2)
@@ -361,7 +358,7 @@ async def submit_review(review: ReviewSubmission):
 async def get_course_reviews(course_id: str):
     """Get all reviews for a specific course with aggregated statistics"""
     try:
-        course_id = course_id.upper()  # Normalize to uppercase
+        course_id = course_id.upper() 
         
         if not os.path.exists(REVIEWS_FILE):
             return CourseReviewsResponse(
@@ -388,14 +385,14 @@ async def get_course_reviews(course_id: str):
                 reviews=[]
             )
         
-        # Calculate aggregated statistics
+ 
         total = len(course_reviews)
         avg_difficulty = sum(r["difficulty"] for r in course_reviews) / total
         avg_workload = sum(r["workload"] for r in course_reviews) / total
         recommend_count = sum(1 for r in course_reviews if r["would_recommend"])
         recommend_percentage = (recommend_count / total) * 100
         
-        # Sort reviews by timestamp (newest first)
+
         sorted_reviews = sorted(course_reviews, key=lambda x: x["timestamp"], reverse=True)
         
         return CourseReviewsResponse(
