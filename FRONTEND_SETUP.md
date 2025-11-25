@@ -7,21 +7,21 @@
 First, set up the FastAPI backend:
 
 ```bash
-# Install backend dependencies
+
 cd api
 pip install -r requirements.txt
 
-# Make sure you have the main requirements installed
+
 cd ..
 pip install -r requirements.txt
 
-# Set your API key
-export POE_API_KEY="your-key-here"  # or OPENAI_API_KEY
 
-# Start the backend server
+export POE_API_KEY="your-key-here"  
+
+
 cd api
 python main.py
-# Or: uvicorn main:app --reload --port 8000
+
 ```
 
 The backend will run on `http://localhost:8000`
@@ -31,13 +31,13 @@ The backend will run on `http://localhost:8000`
 In a new terminal:
 
 ```bash
-# Navigate to frontend directory
+
 cd frontend
 
-# Install dependencies
+
 npm install
 
-# Start development server
+
 npm run dev
 ```
 
