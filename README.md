@@ -17,7 +17,7 @@ The preprocessing script uses **sentence-transformers** for local embedding gene
 
 The search functionality uses GPT-3.5-turbo to refine queries, which requires an API key:
 
-**Option 1: Poe API (Recommended)**
+**Option 1: Poe API **
 ```bash
 export POE_API_KEY="your-poe-api-key-here"
 ```
@@ -26,6 +26,39 @@ export POE_API_KEY="your-poe-api-key-here"
 ```bash
 export OPENAI_API_KEY="sk-your-openai-key-here"
 ```
+
+### Getting Course Data JSON Files
+
+This project requires course data in JSON format. You can obtain the latest course data by using the [GT Scheduler Crawler v2](https://github.com/gt-scheduler/crawler-v2) repository.
+
+#### Run the Crawler Locally
+
+If you want to run the crawler yourself or want the latest data immediately:
+
+1. **Prerequisites:**
+   - Node.js (any recent version)
+   - Yarn package manager **version 1** (v2 is untested)
+
+2. **Clone and setup:**
+   ```bash
+   git clone https://github.com/gt-scheduler/crawler-v2.git
+   cd crawler-v2
+   yarn install
+   ```
+
+3. **Run the crawler:**
+   ```bash
+   # On Unix/macOS
+   yarn start
+   
+   # On Windows
+   yarn start:windows
+   ```
+
+4. **Copy the JSON files:**
+   After the crawler runs, JSON files will be created in the `data/` directory. Copy the desired term file (e.g., `202508.json`) to your `GTCourseHelper/data/` directory.
+
+For more detailed instructions, troubleshooting, and debugging options, see the [crawler repository README](https://github.com/gt-scheduler/crawler-v2).
 
 Get your Poe API key at [poe.com/api_key](https://poe.com/api_key) or OpenAI key at [platform.openai.com](https://platform.openai.com).
 
