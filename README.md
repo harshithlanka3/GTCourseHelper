@@ -2,6 +2,16 @@
 
 A tool for processing and analyzing Georgia Tech course data with embedding support for semantic search.
 
+## Team Contributions
+
+| Team Member | Contributions |
+|-------------|---------------|
+| **Giselle** | Literature review, GPT-4o recommender system, course description vector embedding generation, system diagrams, final report and presentation, code clean up, UI sidebar |
+| **Harshith** | Data preprocessing, vector embedding for course descriptions, semantic similarity search, initial prompt engineering for top 10 recommendations, conversation history implementation, presentation design |
+| **Aaryan** | Course ID matching module (fuzzy matching + hybrid search), UI updates, query experiments |
+| **Saksham** | Conversation history memory |
+| **Kunal** | Quantitative latency measurement, PCA visualization of the embedding space |
+
 ## Setup
 
 ### Install Dependencies
