@@ -1,19 +1,15 @@
-/* Floating Button */
+/* Inline Button */
 .view-reviews-floating-btn {
-  position: fixed;
-  bottom: 90px; /* Above the feedback button */
-  left: 30px;
-  padding: 12px 20px;
-  border-radius: 25px;
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
   background: #B3A369;
   color: white;
   border: none;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(179, 163, 105, 0.3);
-  transition: all 0.3s ease;
-  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(179, 163, 105, 0.2);
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;

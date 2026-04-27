@@ -1,7 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import ChatInterface from './components/ChatInterface'
-import FeedbackButton from './components/FeedbackButton'
-import ViewReviews from './components/ViewReviews'
 import './App.css'
 
 function App() {
@@ -13,8 +11,6 @@ function App() {
       </header>
       <main className="App-main">
         <ChatInterface />
-        <FeedbackButton />
-        <ViewReviews />
       </main>
     </div>
   )

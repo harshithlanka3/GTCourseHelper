@@ -28,9 +28,23 @@
   background: #f8fafc;
 }
 
+.ChatInterface-sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  cursor: pointer;
+}
+
 .ChatInterface-controls {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ChatInterface-action-btns {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 .ChatInterface-reset {

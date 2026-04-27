@@ -3,6 +3,8 @@ import { sendMessage } from '../services/api'
 import MessageList from './MessageList'
 import MessageInput from './MessageInput'
 import ConversationSidebar from './ConversationSidebar'
+import FeedbackButton from './FeedbackButton'
+import ViewReviews from './ViewReviews'
 import './ChatInterface.css'
 
 const INITIAL_ASSISTANT_MESSAGE = {
@@ -184,12 +186,24 @@ function ChatInterface() {
         isOpen={isSidebarOpen}
         onToggle={handleToggleSidebar}
       />
-      
+
+      {isSidebarOpen && (
+        <div
+          className="ChatInterface-sidebar-overlay"
+          onClick={handleToggleSidebar}
+          aria-hidden="true"
+        />
+      )}
+
       <div className={`ChatInterface ${isSidebarOpen ? 'sidebar-open' : ''}`}>
         <MessageList messages={messages} isLoading={isLoading} />
         <div ref={messagesEndRef} />
         <div className="ChatInterface-footer">
           <div className="ChatInterface-controls">
+            <div className="ChatInterface-action-btns">
+              <ViewReviews />
+              <FeedbackButton />
+            </div>
             <button
               type="button"
               className="ChatInterface-reset"
